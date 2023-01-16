@@ -1,6 +1,6 @@
 public class Record {
 	
-	private int id;
+	// private int id;
 	// private int age;
 	private int income;
 	private int score;
@@ -8,21 +8,21 @@ public class Record {
 	
 	
 	
-	public Record(int id, int income, int score) {
+	public Record(int income, int score) {
 		super();
-		this.id = id;
+		// this.id = id;
 		// this.age = age;
 		this.income = income;
 		this.score = score;
 	}
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	// public int getId() {
+	// 	return id;
+	// }
+	// public void setId(int id) {
+	// 	this.id = id;
+	// }
 	// public int getAge() {
 	// 	return age;
 	// }
@@ -49,10 +49,7 @@ public class Record {
 	}
 	@Override
 	public String toString() {
-		return "Record [id=" + id + ", income=" + income + ", score=" + score + ", clusterNumber="
+		return "Record [income=" + income + ", score=" + score + ", clusterNumber="
 				+ clusterNumber + "]";
 	}
-	
-	
-	
 }
