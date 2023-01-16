@@ -1,27 +1,27 @@
 public class Cluster {
 	
-	private int ageCentroid;
+	// private int ageCentroid;
 	private int incomeCentroid;
 	private int scoreCentroid;
 	private int clusterNumber;
 	
 	
 	
-	public Cluster(int clusterNumber, int ageCentroid, int incomeCentroid, int scoreCentroid) {
+	public Cluster(int clusterNumber, int incomeCentroid, int scoreCentroid) {
 		super();
 		this.clusterNumber = clusterNumber;
-		this.ageCentroid = ageCentroid;
+		// this.ageCentroid = ageCentroid;
 		this.incomeCentroid = incomeCentroid;
 		this.scoreCentroid = scoreCentroid;
 	}
 	
 	
-	public int getAgeCentroid() {
-		return ageCentroid;
-	}
-	public void setAgeCentroid(int ageCentroid) {
-		this.ageCentroid = ageCentroid;
-	}
+	// public int getAgeCentroid() {
+	// 	return ageCentroid;
+	// }
+	// public void setAgeCentroid(int ageCentroid) {
+	// 	this.ageCentroid = ageCentroid;
+	// }
 	public int getIncomeCentroid() {
 		return incomeCentroid;
 	}
@@ -44,18 +44,18 @@ public class Cluster {
 
 	@Override
 	public String toString() {
-		return "Cluster [ageCentroid=" + ageCentroid + ", incomeCentroid=" + incomeCentroid + ", scoreCentroid="
+		return "Cluster [incomeCentroid=" + incomeCentroid + ", scoreCentroid="
 				+ scoreCentroid + ", clusterNumber=" + clusterNumber + "]";
 	}
 	
 	// Euclidean Distance
 	public double calculateDistance(Record record) {
-		return Math.sqrt(Math.pow((getAgeCentroid() - record.getAge()), 2) + Math.pow((getIncomeCentroid() - record.getIncome()), 2) + Math.pow((getScoreCentroid() - record.getScore()), 2));
+		return Math.sqrt(Math.pow((getIncomeCentroid() - record.getIncome()), 2) + Math.pow((getScoreCentroid() - record.getScore()), 2));
 	}
 	
 	
 	public void updateCentroid(Record record) {
-		setAgeCentroid((getAgeCentroid() + record.getAge())/2);
+		// setAgeCentroid((getAgeCentroid() + record.getAge())/2);
 		setIncomeCentroid((getIncomeCentroid() + record.getIncome())/2);
 		setScoreCentroid((getScoreCentroid() + record.getScore())/2);
 	}

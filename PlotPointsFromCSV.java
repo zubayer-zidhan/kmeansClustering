@@ -37,8 +37,10 @@ public class PlotPointsFromCSV extends JPanel {
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(cvsSplitBy);
-                int x = (int)(Float.parseFloat(values[0]) * 100);
-                int y = (int)(Float.parseFloat(values[1]) * 100);
+                // x = Annual Income
+                int x = (int)(Float.parseFloat(values[3]) * 5)+300;
+                // y = Spending score
+                int y = (int)(Float.parseFloat(values[4]) * 5)+100;
                 data.add(new int[] {x, y});
             }
 
@@ -49,11 +51,11 @@ public class PlotPointsFromCSV extends JPanel {
     }
 
     public static void main(String[] args) {
-        PlotPointsFromCSV plot = new PlotPointsFromCSV("iris.csv");
+        PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
 
         JFrame frame = new JFrame();
         frame.setTitle("Plot Points");
-        frame.setSize(800, 800);
+        frame.setSize(1400, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(plot);
         frame.setVisible(true);

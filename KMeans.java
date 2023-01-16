@@ -26,26 +26,26 @@ public class KMeans {
 	
 	// Generate Records	
 	private void generateRecord() {
-		Record record = new Record(1, 19, 15, 39);
+		Record record = new Record(1, 15, 39);
 		data.add(record);
 		
-		record = new Record(2, 21, 15, 81);
-		data.add(record);
-		
-
-		record = new Record(3, 20, 16, 6);
+		record = new Record(2, 15, 81);
 		data.add(record);
 		
 
-		record = new Record(4, 23, 16, 77);
+		record = new Record(3, 16, 6);
 		data.add(record);
 		
 
-		record = new Record(5, 31, 17, 40);
+		record = new Record(4, 16, 77);
 		data.add(record);
 		
 
-		record = new Record(6, 22, 17, 76);
+		record = new Record(5, 17, 40);
+		data.add(record);
+		
+
+		record = new Record(6, 17, 76);
 		data.add(record);
 		
 		
@@ -97,7 +97,7 @@ public class KMeans {
 	}
 
 	private void initializeCluster(int clusterNumber, Record record) {
-		Cluster cluster = new Cluster(clusterNumber, record.getAge(), record.getIncome(), record.getScore());
+		Cluster cluster = new Cluster(clusterNumber, record.getIncome(), record.getScore());
 		clusters.add(cluster);
 		
 		List<Record> clusterRecord = new ArrayList<Record>();

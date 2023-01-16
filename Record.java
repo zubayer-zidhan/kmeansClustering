@@ -1,17 +1,17 @@
 public class Record {
 	
 	private int id;
-	private int age;
+	// private int age;
 	private int income;
 	private int score;
 	private int clusterNumber;
 	
 	
 	
-	public Record(int id, int age, int income, int score) {
+	public Record(int id, int income, int score) {
 		super();
 		this.id = id;
-		this.age = age;
+		// this.age = age;
 		this.income = income;
 		this.score = score;
 	}
@@ -23,12 +23,12 @@ public class Record {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
+	// public int getAge() {
+	// 	return age;
+	// }
+	// public void setAge(int age) {
+	// 	this.age = age;
+	// }
 	public int getIncome() {
 		return income;
 	}
@@ -49,7 +49,7 @@ public class Record {
 	}
 	@Override
 	public String toString() {
-		return "Record [id=" + id + ", age=" + age + ", income=" + income + ", score=" + score + ", clusterNumber="
+		return "Record [id=" + id + ", income=" + income + ", score=" + score + ", clusterNumber="
 				+ clusterNumber + "]";
 	}
 	
