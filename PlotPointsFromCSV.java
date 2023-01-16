@@ -5,14 +5,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-// import javax.swing.JFrame;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class PlotPointsFromCSV extends JPanel {
 
     protected int[][] points;
-
+    protected int color = 0;
+    
     public PlotPointsFromCSV(String csvFile) {
         this.points = readCSV(csvFile);
     }
@@ -20,7 +20,6 @@ public class PlotPointsFromCSV extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.setBackground(Color.WHITE);
-
         g.setColor(Color.BLUE);
         for (int[] point : points) {
             g.fillOval(point[0], point[1], 5, 5);
@@ -50,14 +49,12 @@ public class PlotPointsFromCSV extends JPanel {
         return data.toArray(new int[0][]);
     }
 
-    // public static void main(String[] args) {
-    //     PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
-
-    //     JFrame frame = new JFrame();
-    //     frame.setTitle("Plot Points");
-    //     frame.setSize(1400, 800);
-    //     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //     frame.add(plot);
-    //     frame.setVisible(true);
-    // }
+    public void plotPoints(PlotPointsFromCSV plot) {
+        JFrame frame = new JFrame();
+        frame.setTitle("Plot Points");
+        frame.setSize(1400, 800);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(plot);
+        frame.setVisible(true);
+    }
 }

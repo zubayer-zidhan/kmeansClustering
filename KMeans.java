@@ -17,8 +17,7 @@ public class KMeans {
 		KMeans k1 = new KMeans();
 		k1.generateRecord();
 		k1.initiateClusterAndCentroid(clusterNumber);
-		k1.printRecordInformation();
-		k1.printClusterInformation();
+		k1.plotClusteredGraph(k1.data);
 		
 		
 	}
@@ -26,12 +25,13 @@ public class KMeans {
 	
 	// Generate Records	
 	private void generateRecord() {
-		PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
+		PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");	
 
 		for(int[] point : plot.points) {
 			Record record = new Record((point[0]-300)/5, (point[1]-100)/5);
 			data.add(record);
 		}
+		plot.plotPoints(plot);
 	}
 	
 	private void initiateClusterAndCentroid(int clusterNumber) {
@@ -104,5 +104,9 @@ public class KMeans {
 		}
 	}
 	
+	private void plotClusteredGraph(List<Record> records) {
+		PlotPoints plot2 = new PlotPoints(records);
+		plot2.plotPoints(plot2);
+	}
 	
 }

@@ -1,6 +1,5 @@
 public class Cluster {
 	
-	// private int ageCentroid;
 	private int incomeCentroid;
 	private int scoreCentroid;
 	private int clusterNumber;
@@ -10,18 +9,11 @@ public class Cluster {
 	public Cluster(int clusterNumber, int incomeCentroid, int scoreCentroid) {
 		super();
 		this.clusterNumber = clusterNumber;
-		// this.ageCentroid = ageCentroid;
 		this.incomeCentroid = incomeCentroid;
 		this.scoreCentroid = scoreCentroid;
 	}
 	
 	
-	// public int getAgeCentroid() {
-	// 	return ageCentroid;
-	// }
-	// public void setAgeCentroid(int ageCentroid) {
-	// 	this.ageCentroid = ageCentroid;
-	// }
 	public int getIncomeCentroid() {
 		return incomeCentroid;
 	}
@@ -55,7 +47,6 @@ public class Cluster {
 	
 	
 	public void updateCentroid(Record record) {
-		// setAgeCentroid((getAgeCentroid() + record.getAge())/2);
 		setIncomeCentroid((getIncomeCentroid() + record.getIncome())/2);
 		setScoreCentroid((getScoreCentroid() + record.getScore())/2);
 	}

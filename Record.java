@@ -1,34 +1,15 @@
 public class Record {
-	
-	// private int id;
-	// private int age;
 	private int income;
 	private int score;
 	private int clusterNumber;
 	
 	
-	
 	public Record(int income, int score) {
 		super();
-		// this.id = id;
-		// this.age = age;
 		this.income = income;
 		this.score = score;
 	}
 	
-	
-	// public int getId() {
-	// 	return id;
-	// }
-	// public void setId(int id) {
-	// 	this.id = id;
-	// }
-	// public int getAge() {
-	// 	return age;
-	// }
-	// public void setAge(int age) {
-	// 	this.age = age;
-	// }
 	public int getIncome() {
 		return income;
 	}
