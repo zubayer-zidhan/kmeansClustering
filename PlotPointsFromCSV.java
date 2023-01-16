@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFrame;
+// import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class PlotPointsFromCSV extends JPanel {
 
-    private int[][] points;
+    protected int[][] points;
 
     public PlotPointsFromCSV(String csvFile) {
         this.points = readCSV(csvFile);
@@ -38,9 +38,9 @@ public class PlotPointsFromCSV extends JPanel {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(cvsSplitBy);
                 // x = Annual Income
-                int x = (int)(Float.parseFloat(values[3]) * 5)+300;
+                int x = (Integer.parseInt(values[3]) * 5)+300;
                 // y = Spending score
-                int y = (int)(Float.parseFloat(values[4]) * 5)+100;
+                int y = (Integer.parseInt(values[4]) * 5)+100;
                 data.add(new int[] {x, y});
             }
 
@@ -50,14 +50,14 @@ public class PlotPointsFromCSV extends JPanel {
         return data.toArray(new int[0][]);
     }
 
-    public static void main(String[] args) {
-        PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
+    // public static void main(String[] args) {
+    //     PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
 
-        JFrame frame = new JFrame();
-        frame.setTitle("Plot Points");
-        frame.setSize(1400, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(plot);
-        frame.setVisible(true);
-    }
+    //     JFrame frame = new JFrame();
+    //     frame.setTitle("Plot Points");
+    //     frame.setSize(1400, 800);
+    //     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    //     frame.add(plot);
+    //     frame.setVisible(true);
+    // }
 }

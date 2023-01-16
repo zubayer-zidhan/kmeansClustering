@@ -26,29 +26,12 @@ public class KMeans {
 	
 	// Generate Records	
 	private void generateRecord() {
-		Record record = new Record(15, 39);
-		data.add(record);
-		
-		record = new Record(15, 81);
-		data.add(record);
-		
+		PlotPointsFromCSV plot = new PlotPointsFromCSV("dataset.csv");
 
-		record = new Record(6, 6);
-		data.add(record);
-		
-
-		record = new Record(6, 77);
-		data.add(record);
-		
-
-		record = new Record(17, 40);
-		data.add(record);
-		
-
-		record = new Record(17, 76);
-		data.add(record);
-		
-		
+		for(int[] point : plot.points) {
+			Record record = new Record((point[0]-300)/5, (point[1]-100)/5);
+			data.add(record);
+		}
 	}
 	
 	private void initiateClusterAndCentroid(int clusterNumber) {
